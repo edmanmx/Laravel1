@@ -1,0 +1,4 @@
+error: object file .git/objects/87/6a1499c09dc083612f43c53c0ae71b9c30c5b1 is empty
+error: object file .git/objects/87/6a1499c09dc083612f43c53c0ae71b9c30c5b1 is empty
+fatal: loose object 876a1499c09dc083612f43c53c0ae71b9c30c5b1 (stored in .git/objects/87/6a1499c09dc083612f43c53c0ae71b9c30c5b1) is corrupt
+error: failed to run repack
