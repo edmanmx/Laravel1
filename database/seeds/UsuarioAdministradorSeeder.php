@@ -14,10 +14,10 @@ class UsuarioAdministradorSeeder extends Seeder
     public function run()
     {
         $usuario = Usuario::create([
-            'usuario' => 'user',
-            'nombre' => 'Usuario',
-            'email' => 'edgar@hotmail.com',
-            'password' => bcrypt('pass123')
+            'usuario' => 'administrador',
+            'nombre' => 'Administrador',
+            'email' => 'edmanmx@hotmail.com',
+            'password' => bcrypt('12345')
         ]);
 
         $usuario->roles()->sync(1);

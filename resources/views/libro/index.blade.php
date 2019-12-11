@@ -1,6 +1,6 @@
 @extends("theme.$theme.layout")
 @section('titulo')
-Libros
+Sistema de Libros
 @endsection
 
 @section("scripts")
@@ -12,11 +12,11 @@ Libros
     <div class="col-lg-12">
         @csrf
         @include('includes.mensaje')
-        <div class="box">
+        <div class="box box-danger">
             <div class="box-header with-border">
                 <h3 class="box-title">Libros</h3>
                 <div class="box-tools pull-right">
-                    <a href="{{route('crear_libro')}}" class="btn btn-block btn-success btn-sm">
+                    <a href="{{route('crear_libro')}}" class="btn btn-block btn-danger btn-sm">
                         <i class="fa fa-fw fa-plus-circle"></i> Nuevo registro
                     </a>
                 </div>

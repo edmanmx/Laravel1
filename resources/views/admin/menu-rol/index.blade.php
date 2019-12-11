@@ -1,6 +1,6 @@
 @extends("theme.$theme.layout")
 @section("titulo")
-Sistema de Roles
+Sistema de Menús
 @endsection
 
 @section("scripts")
@@ -13,7 +13,7 @@ Sistema de Roles
         @include('includes.mensaje')
         <div class="box box-danger">
             <div class="box-header with-border">
-                <h3 class="box-title">Asignar Menú - Rol</h3>
+                <h3 class="box-title">Menú - Rol</h3>
             </div>
             <div class="box-body">
                 @csrf

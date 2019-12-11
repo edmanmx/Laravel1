@@ -1,6 +1,6 @@
 @extends("theme.$theme.layout")
 @section('titulo')
-    Usuarios
+   Sistema de Usuarios
 @endsection
 
 @section("scripts")

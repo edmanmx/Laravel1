@@ -1,6 +1,6 @@
 @extends("theme.$theme.layout")
 @section('titulo')
-Usuarios
+Sistema de Usuarios
 @endsection
 
 @section("scripts")
@@ -11,11 +11,11 @@ Usuarios
 <div class="row">
     <div class="col-lg-12">
         @include('includes.mensaje')
-        <div class="box">
+        <div class="box box-danger">
             <div class="box-header with-border">
-                <h3 class="box-title">Usuarios</h3>
+                <h3 class="box-title">Usuario</h3>
                 <div class="box-tools pull-right">
-                    <a href="{{route('crear_usuario')}}" class="btn btn-block btn-success btn-sm">
+                    <a href="{{route('crear_usuario')}}" class="btn btn-danger btn-success btn-sm">
                         <i class="fa fa-fw fa-plus-circle"></i> Nuevo registro
                     </a>
                 </div>

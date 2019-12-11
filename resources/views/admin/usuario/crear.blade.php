@@ -1,6 +1,6 @@
 @extends("theme.$theme.layout")
 @section('titulo')
-    Usuarios
+    Sistema de Usuarios
 @endsection
 
 @section("scripts")
@@ -16,7 +16,7 @@
             <div class="box-header with-border">
                 <h3 class="box-title">Crear usuario</h3>
                 <div class="box-tools pull-right">
-                    <a href="{{route('usuario')}}" class="btn btn-block btn-info btn-sm">
+                    <a href="{{route('usuario')}}" class="btn btn-danger btn-info btn-sm">
                         <i class="fa fa-fw fa-reply-all"></i> Volver al listado
                     </a>
                 </div>

@@ -1,6 +1,6 @@
 @extends("theme.$theme.layout")
 @section("titulo")
-Permiso - Rol
+Sistema de Permisos
 @endsection
 
 @section("scripts")
@@ -13,7 +13,7 @@ Permiso - Rol
         @include('includes.mensaje')
         <div class="box box-danger">
             <div class="box-header with-border">
-                <h3 class="box-title">Menús - Rol</h3>
+                <h3 class="box-title">Permiso - Rol</h3>
             </div>
             <div class="box-body">
                 @csrf

@@ -1,6 +1,6 @@
 @extends("theme.$theme.layout")
 @section('titulo')
-    Sistema Menús
+    Sistema de Menús
 @endsection
 
 @section("scripts")

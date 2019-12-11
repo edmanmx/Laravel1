@@ -6,7 +6,6 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 use App\Models\Admin\Menu;
 
-
 class AppServiceProvider extends ServiceProvider
 {
     /**
