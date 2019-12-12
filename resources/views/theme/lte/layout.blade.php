@@ -100,7 +100,28 @@
   <!-- Inicia footer -->
 @include("theme/$theme/footer")
   <!-- Termina footer -->
-
+  @if(session()->get("roles") && count(session()->get("roles")) > 1)
+  @csrf
+  <div class="modal fade modal-header" id="modal-seleccionar-rol" data-rol-set="{{empty(session()->get("rol_id")) ? 'NO' : 'SI'}}" tabindex="-1" data-backdrop="static" data-keyboard="false">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h4 class="modal-title text-red">Roles de Usuario</h4>
+              </div>
+              <div class="modal-body">
+                  <p>Cuentas con mas de un Rol. Selecciona con cuál de ellos deseas trabajar</p>
+                  @foreach(session()->get("roles") as $key => $rol)
+                      <li>
+                          <a href="#" class="asignar-rol text-info text-bold" data-rolid="{{$rol['id']}}" data-rolnombre="{{$rol["nombre"]}}">
+                              {{$rol["nombre"]}}
+                          </a>
+                      </li>
+                  @endforeach
+              </div>
+          </div>
+      </div>
+  </div>
+@endif
 
 
 <!-- jQuery 3 -->

@@ -32,7 +32,7 @@ class Usuario extends Authenticatable
                 [
                     'rol_id' => $roles[0]['id'],
                     'rol_nombre' => $roles[0]['nombre'],
-                ]
+                    ]
             );
         } else {
             Session::put('roles', $roles);

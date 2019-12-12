@@ -39,8 +39,8 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="{{asset("assets/$theme/dist/img/tecnm.jpeg")}}" class="user-image" alt="User Image">
-              <span class="hidden-xs">Hola, {{session()->get('nombre_usuario') ?? 'Invitado'}}</span>
+              <img src="{{asset("assets/$theme/dist/img/userdefault.png")}}" class="user-image" alt="User Image">
+              <span class="hidden-xs">Bienvenido, {{session()->get('nombre_usuario') ?? 'Inicia tu sesión aquí'}}</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
@@ -53,25 +53,32 @@
                 </p>
               </li> -->
               <!-- Menu Body -->
-              <!-- <li class="user-body">
-                <div class="row">
+              <li class="user-body">
+                <div class="box box-info text-center text-orange">
                     @if(session()->get("roles") && count(session()->get("roles")) > 1)
-                        <div class="col-xs-6 text-center">
-                            <a href="#" class="cambiar-rol">Cambiar Rol</a>
-                        </div>
+                        <!--<div class="box box-warning text-justify text-right">-->
+                            <p>Cambiar Rol </p>
+                            @foreach(session()->get("roles") as $key => $rol)
+                              <a href="#" class="asignar-rol" data-rolid="{{$rol['id']}}" data-rolnombre="{{$rol["nombre"]}}">
+                              <div class="box-body text-info">
+                                {{$rol["nombre"]}}
+                              </div>
+                              </a>
+                            @endforeach
                     @endif
                 </div>
-              </li> -->
+              </li>
+            
               <!-- Menu Footer-->
               <li class="user-footer">
-                <div class="pull-right">
-                    @guest
-                        <a href="{{route('login')}}" class="btn btn-default btn-flat">Login</a>
-                    @endguest
-                </div>
-                <div class="pull-right">
-                  <a href="{{route('logout')}}" class="btn btn-default btn-flat">Salir</a>
-                </div>
+                  <div class="pull-right">
+                      @guest
+                          <a href="{{route('login')}}" class="btn btn-default btn-flat">Login</a>
+                      @endguest
+                  </div>
+                  <div class="pull-right">
+                    <a href="{{route('logout')}}" class="btn btn-default btn-flat">Salir</a>
+                  </div>
               </li>
             </ul>
           </li>

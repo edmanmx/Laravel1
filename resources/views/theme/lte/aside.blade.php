@@ -8,10 +8,14 @@
         </div>
         <div class="pull-left info">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              </br>
-              <span class="hidden-xs-down">Usuario: {{session()->get('nombre_usuario') ?? 'Invitado'}}</span>
+              <br>
+              <span class="hidden-xs-down">Usuario: {{session()->get('nombre_usuario') ?? 'Invitado'}}</span></br>
+              @if(session()->get("roles") && count(session()->get("roles")) > 1)
+              <span class="hidden-xs-down">Rol: {{session()->get('rol_nombre') ?? ''}}</span>
+              @else
+              <span class="hidden-xs-down">TecNM en León</span>
+              @endif
             </a>
-          
         </div>
       </div>
       <!-- search form -->
