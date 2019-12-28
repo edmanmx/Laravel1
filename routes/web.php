@@ -83,3 +83,16 @@ Route::delete('libro/{id}', 'LibroController@eliminar')->name('eliminar_libro');
 
 /*Rutas de libro-prestamo*/
 Route::get('libro-prestamo','LibroPrestamoController@index')->name('libro-prestamo');
+
+/*Rutas de Control Escolar*/
+Route::group(['prefix' => 'controlescolar', 'namespace' => 'ControlEscolar'], function () {
+Route::get('', 'PlanEstudioController@index');
+    /* Rutas de Plan de Estudios */
+
+Route::get('planestudios', 'PlanEstudioController@index')->name('plan_estudios');
+Route::get('planestudios/crear', 'PlanEstudioController@crear')->name('crear_plan_estudios');
+Route::post('planestudios', 'PlanEstudioController@guardar')->name('guardar_plan_estudios');
+Route::get('planestudios/{ClaveCarrera}/editar', 'PlanEstudioController@editar')->name('editar_plan_estudios');
+Route::put('planestudios/{ClaveCarrera}', 'PlanEstudioController@actualizar')->name('actualizar_plan_estudios');
+Route::delete('planestudios/{ClaveCarrera}', 'PlanEstudioController@eliminar')->name('eliminar_plan_estudios'); 
+});

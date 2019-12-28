@@ -1,10 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\ControlEscolar;
 
+use App\Http\Controllers\Controller;
+use App\Models\ControlEscolar\PlanEstudios;
 use Illuminate\Http\Request;
-use App\Models\LibroPrestamo;
-class LibroPrestamoController extends Controller
+
+class PlanEstudioController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,8 +15,8 @@ class LibroPrestamoController extends Controller
      */
     public function index()
     {
-        $libros = LibroPrestamo::orderBy('created_at')->get();
-        return view('libro-prestamo.index', compact('libros'));
+        $datas = PlanEstudios::orderBy('ClaveCarrera')->get();
+        return view('controlescolar.planestudios.index', compact('datas'));    
     }
 
     /**
@@ -22,9 +24,9 @@ class LibroPrestamoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function crear()
     {
-        //
+        return view('controlescolar.planestudios.crear');
     }
 
     /**
@@ -33,9 +35,10 @@ class LibroPrestamoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function guardar(Request $request)
     {
-        //
+        PlanEstudios::create($request->all());
+        return redirect('controlescolar/planestudios')->with('mensaje', 'Plan de estudios creado con exito');
     }
 
     /**
@@ -44,7 +47,7 @@ class LibroPrestamoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function mostrar($id)
     {
         //
     }
@@ -55,9 +58,10 @@ class LibroPrestamoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function editar($ClaveCarrera)
     {
-        //
+        $data = PlanEstudios::findOrFail($ClaveCarrera);
+        return view('planestudios.editar', compact('data'));
     }
 
     /**
@@ -67,7 +71,7 @@ class LibroPrestamoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function actualizar(Request $request, $id)
     {
         //
     }
@@ -78,7 +82,7 @@ class LibroPrestamoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function eliminar($id)
     {
         //
     }
