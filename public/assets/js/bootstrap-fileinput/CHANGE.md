@@ -1,10 +1,20 @@
 Change Log: `bootstrap-fileinput`
 =================================
 
-## version 5.0.7
+## version 5.0.8
 
 **Date:** _under development_
 
+- (bug #1510): Lock browse button correctly when disable method is called.
+- (bug #1508): Correct file caption after files are uploaded.
+- (bug #1499, #1502): Correct duplicate file check error rendering.
+ 
+## version 5.0.7
+
+**Date:** 17-Nov-2019
+
+- (enh #1496): Correct isEmpty check for functions.
+- (enh #1485): Update Portugese Brazilian Translations.
 - (enh #1479): Methods updated:
    - Include `addToStack` method.
    - Remove `updateStack` method

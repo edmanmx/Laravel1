@@ -1,6 +1,6 @@
 @extends("theme.$theme.layout")
 @section('titulo')
-    Libros
+    Sistema de Libros
 @endsection
 
 @section("styles")
@@ -11,10 +11,11 @@
 <script src="{{asset("assets/js/bootstrap-fileinput/js/fileinput.min.js")}}" type="text/javascript"></script>
 <script src="{{asset("assets/js/bootstrap-fileinput/js/locales/es.js")}}" type="text/javascript"></script>
 <script src="{{asset("assets/js/bootstrap-fileinput/themes/fas/theme.min.js")}}" type="text/javascript"></script>
+
 @endsection
 
 @section("scripts")
-<script src="{{asset("assets/pages/scripts/libro/crear.js")}}" type="text/javascript"></script>
+<script src="{{asset("assets/pages/libro/crear.js")}}" type="text/javascript"></script>
 @endsection
 
 @section('contenido')
@@ -33,7 +34,6 @@
                     @include('libro.form')
                 </div>
                 <div class="box-footer">
-                    <div class="col-lg-3"></div>
                     <div class="col-lg-6">
                         @include('includes.boton-form-crear')
                     </div>

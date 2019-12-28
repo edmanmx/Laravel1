@@ -4,7 +4,7 @@ Sistema de Libros
 @endsection
 
 @section("scripts")
-<script src="{{asset("assets/pages/scripts/libro/index.js")}}" type="text/javascript"></script>
+<script src="{{asset("assets/pages/libro/index.js")}}" type="text/javascript"></script>
 @endsection
 
 @section('contenido')

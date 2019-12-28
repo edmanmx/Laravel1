@@ -1,3 +1,6 @@
+@php
+use Carbon\Carbon;    
+@endphp
 <header class="main-header">
     <!-- Logo -->
     <a href="/" class="logo">
@@ -9,7 +12,7 @@
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
       <!-- Sidebar botón de ocultar  -->
-      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+      <a href="/" class="sidebar-toggle" data-toggle="push-menu" role="button">
         <span class="sr-only">Toggle navigation</span>
       </a>
 
@@ -17,7 +20,7 @@
         <ul class="nav navbar-nav">
           <!-- Messages: style can be found in dropdown.less-->
           <li class="dropdown messages-menu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <a href="/" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-envelope-o"></i>
               <span class="label label-success"></span>
             </a>
@@ -44,14 +47,16 @@
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
-              <!-- <li class="user-header">
-                 <img src="{{asset("assets/$theme/dist/img/user2-160x160.jpg")}}" class="img-circle" alt="User Image">
+              <li class="user-header">
+                 <img src="{{asset("assets/$theme/dist/img/userdefault.png")}}" class="img-circle" alt="User Image">
 
                  <p>
-                  Alexander Pierce - Web Developer
-                  <small>Member since Nov. 2012</small>
-                </p>
-              </li> -->
+                    {{session()->get('nombre_usuario') ?? 'Invitado'}} - {{session()->get('rol_nombre') ?? 'Guest'}}
+                    @auth
+                    <small>Registrado desde: {{Carbon::parse(auth()->user()->created_at)->year}}</small>
+                    @endauth
+                  </p>
+              </li>
               <!-- Menu Body -->
               <li class="user-body">
                 <div class="box box-info text-center text-orange">

@@ -78,8 +78,7 @@
           </div>
         </div>
         <div class="box-body">
-          
-        @yield('contenido')        
+          @yield('contenido')        
         
         </div>
         <!-- /.box-body -->

@@ -43,7 +43,7 @@ var Biblioteca = function () {
                 newestOnTop: true,
                 positionClass: 'toast-top-right',
                 preventDuplicates: true,
-                timeOut: '800'
+                timeOut: '1000'
             };
             titulo='SIIA V4'
             if (tipo == 'error') {
